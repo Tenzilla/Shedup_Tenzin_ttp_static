@@ -1,13 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <title>My introduction and the time</title>
+  </head>
   
-<body style = "text-align: center";>
+  <style>
+    body {
+      background-image: url(https://i.pinimg.com/originals/cc/53/b4/cc53b42d2765a69625114dbe09a85586.gif);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+  <body style = "text-align: center">
+    <h1 style = "color: white">My name is Tenzin Shedup and my favorite hobby is to go on road trips! The current time is: 
+      <div id="time"> </div> </h1>
+    <script type= "text/javascript">
+    setInterval(time, 200);
+    function time() {
+      var time = new Date();
+      var hr = time.getHours();
+      var min = time.getMinutes();
+      var sec = time.getSeconds();
+      var en = 'AM'
 
-<h1 style = "color: blue";>My name is Tenzin Shedup and my favorite hobby is to go on road trips! The current time is:</h1>
+      if (hr > 12) {
+        hr = hr - 12;
+        en = 'PM';
+      }
+      if (hr == 0) {
+        hrs = 12;
+      }
+      if (hr < 10) {
+        hr = '0' + hr;
+      }
+      if (min < 10) {
+        min = '0' + min;
+      }
+      if (sec < 10) {
+        sec = '0' + sec;
+      }
+      document.getElementById('time').innerHTML = hr + ':' + min + ':' + sec + ' ' + en;
+    }
+    
+    </script>
+    
+  </body>
 
-<script type= "text/javascript">
-  
-  </script>
-  
-</body>
 </html>
